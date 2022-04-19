@@ -1,0 +1,23 @@
+{
+  "name": "create-adobe-extension",
+  "version": "1.1.0",
+  "bin": {
+    "create-adobe-extension": "create-adobe-extension.js"
+  },
+  "description": "",
+  "main": "create-adobe-extension.js",
+  "type": "module",
+  "scripts": {
+    "start": "node create-adobe-extension.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "chalk": "^5.0.1",
+    "cli-progress": "^3.10.0",
+    "figlet": "^1.5.2",
+    "inquirer": "^8.2.2",
+    "xmlbuilder2": "^3.0.2"
+  }
+}
