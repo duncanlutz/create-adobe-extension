@@ -7,6 +7,10 @@
   "description": "",
   "main": "create-adobe-extension.js",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duncanlutz/create-adobe-extension"
+  },
   "scripts": {
     "start": "node create-adobe-extension.js"
   },
