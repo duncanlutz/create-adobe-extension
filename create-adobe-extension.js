@@ -15,7 +15,7 @@ let debugEnabled = false;
 const bar = new cliProgress.SingleBar({ clearOnComplete: true }, cliProgress.Presets.shades_classic);
 let mainFolder;
 
-figlet.text('Adobe Live Reload', {
+figlet.text('Create Adobe Extension', {
     font: 'Big'
 }, (err, data) => {
     if (err) {

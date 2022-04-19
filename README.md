@@ -36,6 +36,11 @@ The tool will request information about your extension, then create the necessar
 
 # Changelog
 
+## v1.1.3 (2022-04-19)
+
+### Bug Fixes
+- Changed Ascii art title to match npm package title.
+
 ## v1.1.2 (2022-04-19)
 
 ### Bug Fixes
