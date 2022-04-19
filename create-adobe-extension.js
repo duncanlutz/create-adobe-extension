@@ -8,7 +8,7 @@ import axios from "axios";
 import cliProgress from "cli-progress";
 import figlet from "figlet";
 
-const args = process.argv.slice(1);
+const args = process.argv.slice(2);
 let programVersionArr = [];
 let bundleId;
 let debugEnabled = false;
@@ -28,23 +28,22 @@ figlet.text('Adobe Live Reload', {
 setTimeout(() => {
 
     // Initialize CEP Extension
-    if (args.length === 1) {
+    if (args.length === 0) {
         (
             async () => {
-                const curFolderArr = args[0].split('/')
-                const curFolder = curFolderArr.slice(0, curFolderArr.length - 1);
-                if (curFolder[curFolder.length - 1].toLowerCase() !== 'extensions') {
+                const curFolderArr = process.cwd().split('/')
+                if (curFolderArr[curFolderArr.length - 1].toLowerCase() !== 'extensions') {
                     const folderCheck = await inquirer.prompt([{
                         type: 'confirm',
                         name: 'continue',
                         message: `It doesn't look like you're in the CEP Extensions folder, do you want to continue?`
                     }])
-                    .then((answers) => {
-                        if (answers.continue === false) {
-                            console.log(chalk.red('Exiting process...'));
-                            process.exit(0);
-                        }
-                    })
+                        .then((answers) => {
+                            if (answers.continue === false) {
+                                console.log(chalk.red('Exiting process...'));
+                                process.exit(0);
+                            }
+                        })
                 }
 
                 const firstQuestions = await inquirer.prompt([
@@ -434,6 +433,11 @@ setTimeout(() => {
                 }, 300);
 
             })
+    }
+    else {
+        args.forEach(arg => {
+            console.log(chalk.red(`Error: Argument "${arg}" not recognized`));
+        })
     }
 
 }, 50);

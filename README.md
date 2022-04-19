@@ -36,6 +36,11 @@ The tool will request information about your extension, then create the necessar
 
 # Changelog
 
+## v1.1.2 (2022-04-19)
+
+### Bug Fixes
+- Changed method of detecting the current working folder for CEP Extension fold check.
+
 ## v1.1.0 (2022-04-19)
 
 ### Features

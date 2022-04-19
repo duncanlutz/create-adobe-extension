@@ -1,21 +1,35 @@
 {
   "name": "create-adobe-extension",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "bin": {
     "create-adobe-extension": "create-adobe-extension.js"
   },
-  "description": "",
+  "description": "This package provides a CLI tool to create Adobe CEP Extensions.",
   "main": "create-adobe-extension.js",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/duncanlutz/create-adobe-extension"
+    "url": "https://github.com/duncanlutz/create-adobe-extension.git"
   },
+  "keywords": [
+    "Adobe",
+    "CEP",
+    "CLI",
+    "Extension",
+    "Debug"
+  ],
+  "license": "UNLICENSED",
   "scripts": {
     "start": "node create-adobe-extension.js"
   },
-  "author": "",
-  "license": "ISC",
+  "funding": {
+    "type": "individual",
+    "url": "https://paypal.me/duncanlutz"
+  },
+  "author": {
+    "name": "Duncan Lutz",
+    "email": "contact@duncanlutz.dev"
+  },
   "dependencies": {
     "axios": "^0.26.1",
     "chalk": "^5.0.1",
