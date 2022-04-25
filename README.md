@@ -2,15 +2,38 @@
 This package provides a CLI tool to create Adobe CEP Extensions.
 
 ## Features
-- Create Adobe CEP Extensions without needing to download them from the CEP-Resources Github repository.
+- Create Adobe CEP Extension Bundles without needing to download them from the CEP-Resources Github repository.
+- Add new extensions to existing Adobe CEP Extension Bundles.
 - Automatically generate .debug files based on your inputs.
 
 ## Usage
-Navigate to the Adobe CEP Extensions folder on your machine and run command:
+Navigate to the Folder you want to create your extension in.
 
-`npx create-adobe-extension`
+By default the tool checks to see if you're creating an extension in the official Adobe extensions folder. If not, it will give you a warning asking if you want to continue.
+
+These extension folders are found at:
+
+- System extension folder
+  - Win(x64): `C:\Program Files (x86)\Common Files\Adobe\CEP\extensions`, and `C:\Program Files\Common Files\Adobe\CEP\extensions` (since CEP 6.1)
+  - macOS: `/Library/Application Support/Adobe/CEP/extensions`
+
+- Per-user extension folder
+  - Win: `C:\Users\<USERNAME>\AppData\Roaming\Adobe\CEP/extensions`
+  - macOS: `~/Library/Application Support/Adobe/CEP/extensions`
+
+Now run command:
+
+`$ npx create-adobe-extension`.
 
 The tool will request information about your extension, then create the necessary files for your extension.
+
+## Flags
+
+- `--options`: Display a list of all flags available for create-adobe-extension.
+
+- `--add`: Add a new extension to an existing extension bundle (make sure you're inside the folder of the bundle you'd like to add to before running).
+
+- `--folder-check`: Enable/disable a warning when creating an extension outside of standard Adobe Extensions folder.
 
 ## User Responses
 
@@ -36,19 +59,32 @@ The tool will request information about your extension, then create the necessar
 
 # Changelog
 
+## v1.2.0 (2022-04-25)
+
+### Added
+- Added --add flag which allows for the creation of new extensions within an existing extension bundle.
+- Added --options flag which displays all flags available in this package.
+- Added --folder-check flag which enables/disables a check to warn users when they are creating an extension outside of the official Adobe extensions folders.
+
+### Changes
+- Updated README to clarify where the extension folders are located, what the package checks for and how to disable the checking.
+
+### Removed
+- Removed Ascii art title because it was annoying me when I used this package.
+
 ## v1.1.3 (2022-04-19)
 
-### Bug Fixes
+### Changes
 - Changed Ascii art title to match npm package title.
 
 ## v1.1.2 (2022-04-19)
 
-### Bug Fixes
+### Changes
 - Changed method of detecting the current working folder for CEP Extension fold check.
 
 ## v1.1.0 (2022-04-19)
 
-### Features
-- feat: Added README file
-- feat: Added check for whether user is in CEP Extensions folder
-- feat: Added *Adobe Live Reload* Ascii art
+### Added
+- Added README file
+- Added check for whether user is in CEP Extensions folder
+- Added *Adobe Live Reload* Ascii art
